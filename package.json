@@ -9,7 +9,6 @@
   },
   "author": "yisaer",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
     "parcel-bundler": "^1.6.2"
   }

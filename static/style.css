@@ -1,99 +1,108 @@
-body{
-	font: 13px 微软雅黑;
-	color: #444;
-	background: url(bg.gif);
-}
-.main{
-	background: #000;
-}
-.ukagaka{
-	position: absolute;
-	bottom: 10%;
-	right: 10%;
-	display:flex;
-	width: 280px;
-	height: 146px;
-	user-select: none;
-}
-.tips{
-	flex: 1;
-	background:linear-gradient(#ffe1e1,#fffffb);
-	border: 1px solid #e87a73;
-	border-radius: 5px;
-	padding: 10px;
-	height: 50px;
-	color: #9a3535
-
+body {
+    font: 13px 微软雅黑;
+    color: #444;
+    background: url(bg.gif);
 }
 
-.tips:hover{
-	user-select: text;
+.main {
+    background: #000;
 }
-.icon{
-	width: 0;
-	height: 0;
-	border-top: 12px solid #e87a73;
-	border-left: 12px solid transparent;
-	position: relative;
-	right: 30px;
-	top: 72px
-}
-.icon:after{
-	content: '';
-	width: 0;
-	height: 0;
-	border-top: 12px solid #fffffb;
-	border-left: 12px solid transparent;
-	position: absolute;
-	right: 1px;
-	top: -14px
-}
-.face{
-	width:85px;
-	height:146px;
 
+.ukagaka {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    display: flex;
+    width: 280px;
+    height: 146px;
+    user-select: none;
 }
-.face1{
-	background: url(face1.gif);
+
+.tips {
+    flex: 1;
+    background: linear-gradient(#ffe1e1, #fffffb);
+    border: 1px solid #e87a73;
+    border-radius: 5px;
+    padding: 10px;
+    height: 50px;
+    color: #9a3535
 }
-.face2{
-	background: url(face2.gif);
+
+.tips:hover {
+    user-select: text;
 }
-.face3{
-	background: url(face3.gif);
+
+.icon {
+    width: 0;
+    height: 0;
+    border-top: 12px solid #e87a73;
+    border-left: 12px solid transparent;
+    position: relative;
+    right: 30px;
+    top: 72px
 }
-.close{
-	display: none;
+
+.icon:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 12px solid #fffffb;
+    border-left: 12px solid transparent;
+    position: absolute;
+    right: 1px;
+    top: -14px
 }
-.ukagaka:hover .close{
-	display: block;
-	color: #e87a73;
-	font-weight: bold;
-	font-size: 18px;
+
+.face {
+    width: 85px;
+    height: 146px;
+}
+
+.face1 {
+    background: url(face1.gif);
+}
+
+.face2 {
+    background: url(face2.gif);
+}
+
+.face3 {
+    background: url(face3.gif);
+}
+
+.close {
+    display: none;
+}
+
+.ukagaka:hover .close {
+    display: block;
+    color: #e87a73;
+    font-weight: bold;
+    font-size: 18px;
     position: absolute;
     right: 0px;
     margin-right: -10px;
     cursor: pointer;
 }
 
-.call{
-	display: none;
-	position: fixed;
+.call {
+	font-size: 12px;
+    display: none;
+    position: fixed;
     bottom: 10px;
     right: 10px;
-    background:linear-gradient(#ffe1e1,#fffffb);
-	border: 1px solid #e87a73;
-	color: #9a3535;
-	padding: 2px 15px;
-	cursor: pointer;
+    background: linear-gradient(#ffe1e1, #fffffb);
+    border: 1px solid #e87a73;
+    color: #9a3535;
+    padding: 2px 15px;
+    cursor: pointer;
 }
 
-.menu{
-	font-size: 10px;
+.menu {
+    font-size: 10px;
     position: absolute;
     bottom: 82px;
     right: 107px;
     color: #e87a73;
     cursor: pointer;
 }
-

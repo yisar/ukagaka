@@ -71,7 +71,7 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({12:[function(require,module,exports) {
+})({20:[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -101,7 +101,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],6:[function(require,module,exports) {
+},{}],9:[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -132,23 +132,23 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":12}],3:[function(require,module,exports) {
+},{"./bundle-url":20}],4:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"_css_loader":6}],7:[function(require,module,exports) {
+},{"_css_loader":9}],11:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"./bg.gif":[["58dfb2a9af2b3eb2b52c660e7edd0a32.gif",10],10],"./face1.gif":[["21b0cb6085475e5011c8a372e0976fbe.gif",14],14],"./face2.gif":[["f40d57fe86e3d6a1c677ef6613fab3e2.gif",13],13],"./face3.gif":[["01c87e9f6fe1279e0d5d2ab6377a3dd6.gif",11],11],"_css_loader":6}],8:[function(require,module,exports) {
+},{"./bg.gif":[["58dfb2a9af2b3eb2b52c660e7edd0a32.gif",16],16],"./face1.gif":[["21b0cb6085475e5011c8a372e0976fbe.gif",18],18],"./face2.gif":[["f40d57fe86e3d6a1c677ef6613fab3e2.gif",17],17],"./face3.gif":[["01c87e9f6fe1279e0d5d2ab6377a3dd6.gif",19],19],"_css_loader":9}],12:[function(require,module,exports) {
 module.exports = {
 	"data":[
 		{
-  		"tip":"我是第一条啦啦啦",
+  		"tip":"主人sama~欢迎回家~~~",
   		"face":"face1"
   	},
   	{
@@ -161,31 +161,30 @@ module.exports = {
   	}
   ]
 };
-},{}],9:[function(require,module,exports) {
+},{}],13:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+    value: true
 });
 
 exports.default = function () {
-	var HTML = '\n\t\t<div class="call">\u53EC\u5524\u6625\u83DC</div>\n\t';
-	document.querySelector('body').innerHTML += HTML;
-	document.querySelector('.close').onclick = function () {
-		document.querySelector('.ukagaka').style.display = 'none';
-		document.querySelector('.call').style.display = 'block';
-		console.log('点击了');
-	};
-	document.querySelector('.call').onclick = function () {
-		document.querySelector('.ukagaka').style.display = '';
-		document.querySelector('.call').style.display = 'none';
-	};
+    var HTML = '\n\t\t<div class="call">\u53EC\u5524\u6625\u83DC</div>\n\t';
+    document.querySelector('body').innerHTML += HTML;
+    document.querySelector('.close').onclick = function () {
+        document.querySelector('.ukagaka').style.display = 'none';
+        document.querySelector('.call').style.display = 'block';
+    };
+    document.querySelector('.call').onclick = function () {
+        document.querySelector('.ukagaka').style.display = '';
+        document.querySelector('.call').style.display = 'none';
+    };
 };
-},{}],4:[function(require,module,exports) {
+},{}],6:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-		value: true
+    value: true
 });
 
 var _style = require('../static/style.css');
@@ -203,66 +202,66 @@ var _close2 = _interopRequireDefault(_close);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = function () {
-		var max = _data2.default.data.length - 1;
-		var index = Math.round(Math.random() * max);
-		var HTML = '<div class="tips">' + _data2.default.data[index].tip + '<i class="menu">menu</i></div>\n\t\t\t\t<i class="icon"></i>\n\t\t\t\t<div class="face ' + _data2.default.data[index].face + '"></div>\n\t\t\t\t<i class="close">\xD7</i>';
+    var max = _data2.default.data.length - 1;
+    var index = Math.round(Math.random() * max);
+    var HTML = '<div class="tips">' + _data2.default.data[index].tip + '<i class="menu">menu</i></div>\n\t\t\t\t<i class="icon"></i>\n\t\t\t\t<div class="face ' + _data2.default.data[index].face + '"></div>\n\t\t\t\t<i class="close">\xD7</i>';
 
-		document.querySelector('.ukagaka').innerHTML = HTML;
-		(0, _close2.default)();
+    document.querySelector('.ukagaka').innerHTML = HTML;
+    (0, _close2.default)();
 };
-},{"../static/style.css":7,"../static/data.json":8,"./close":9}],5:[function(require,module,exports) {
+},{"../static/style.css":11,"../static/data.json":12,"./close":13}],5:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+    value: true
 });
 
 exports.default = function () {
-	var offsetX = 0;
-	var offsetY = 0;
+    var offsetX = 0;
+    var offsetY = 0;
 
-	var isdrag = false;
+    var isdrag = false;
 
-	// 鼠标按下事件
-	document.querySelector('.face').addEventListener('mousedown', function (e) {
-		offsetX = e.pageX - document.querySelector('.ukagaka').offsetLeft;
-		offsetY = e.pageY - document.querySelector('.ukagaka').offsetTop;
-		isdrag = true;
-	});
+    // 鼠标按下事件
+    document.querySelector('.face').addEventListener('mousedown', function (e) {
+        offsetX = e.pageX - document.querySelector('.ukagaka').offsetLeft;
+        offsetY = e.pageY - document.querySelector('.ukagaka').offsetTop;
+        isdrag = true;
+    });
 
-	// 鼠标移动事件
-	document.onmousemove = function (e) {
-		var mouseX = e.pageX;
-		var mouseY = e.pageY;
+    // 鼠标移动事件
+    document.onmousemove = function (e) {
+        var mouseX = e.pageX;
+        var mouseY = e.pageY;
 
-		var moveX = 0;
-		var moveY = 0;
+        var moveX = 0;
+        var moveY = 0;
 
-		if (isdrag === true) {
-			moveX = mouseX - offsetX;
-			moveY = mouseY - offsetY;
+        if (isdrag === true) {
+            moveX = mouseX - offsetX;
+            moveY = mouseY - offsetY;
 
-			var pageWidth = document.body.clientWidth;
-			var pageHeight = document.documentElement.clientHeight;
+            var pageWidth = document.body.clientWidth;
+            var pageHeight = document.documentElement.clientHeight;
 
-			var ukaWidth = document.querySelector('.ukagaka').offsetWidth;
-			var ukaHeight = document.querySelector('.ukagaka').offsetHeight;
+            var ukaWidth = document.querySelector('.ukagaka').offsetWidth;
+            var ukaHeight = document.querySelector('.ukagaka').offsetHeight;
 
-			var maxX = pageWidth - ukaWidth;
-			var maxY = pageHeight - ukaHeight;
+            var maxX = pageWidth - ukaWidth;
+            var maxY = pageHeight - ukaHeight;
 
-			moveX = Math.min(maxX - 10, Math.max(10, moveX));
-			moveY = Math.min(maxY - 10, Math.max(10, moveY));
+            moveX = Math.min(maxX - 10, Math.max(10, moveX));
+            moveY = Math.min(maxY - 10, Math.max(10, moveY));
 
-			document.querySelector('.ukagaka').style.left = moveX + 'px';
-			document.querySelector('.ukagaka').style.top = moveY + 'px';
-		}
-	};
+            document.querySelector('.ukagaka').style.left = moveX + 'px';
+            document.querySelector('.ukagaka').style.top = moveY + 'px';
+        }
+    };
 
-	// 鼠标松开事件
-	document.onmouseup = function () {
-		isdrag = false;
-	};
+    // 鼠标松开事件
+    document.onmouseup = function () {
+        isdrag = false;
+    };
 };
 },{}],2:[function(require,module,exports) {
 'use strict';
@@ -283,7 +282,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _main2.default)();
 (0, _drag2.default)();
-},{"./static/reset.css":3,"./component/main":4,"./component/drag":5}],15:[function(require,module,exports) {
+},{"./static/reset.css":4,"./component/main":6,"./component/drag":5}],22:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -305,7 +304,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '62696' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '57504' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -406,5 +405,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}]},{},[15,2])
+},{}]},{},[22,2])
 //# sourceMappingURL=/dist/ukagaka.map
