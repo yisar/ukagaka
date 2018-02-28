@@ -1,0 +1,51 @@
+body{
+	font: 13px 微软雅黑;
+	color: #444;
+}
+.main{
+	background: #000;
+}
+.ukagaka{
+	position: absolute;
+	bottom: 10%;
+	right: 10%;
+	display:flex;
+	width: 280px
+}
+.tips{
+	flex: 1;
+	background:linear-gradient(#ffe1e1,#fffffb);
+	border: 1px solid #e87a73;
+	border-radius: 5px;
+	padding: 10px;
+	height: 50px;
+	color: #9a3535
+
+}
+.icon{
+	width: 0;
+	height: 0;
+	border-top: 12px solid #e87a73;
+	border-left: 12px solid transparent;
+	position: relative;
+	right: 30px;
+	top: 72px
+}
+.icon:after{
+	content: '';
+	width: 0;
+	height: 0;
+	border-top: 12px solid #fffffb;
+	border-left: 12px solid transparent;
+	position: absolute;
+	right: 1px;
+	top: -14px
+}
+.face{
+	width:85px;
+	height:146px;
+
+}
+.face1{
+	background: url(face1.gif);
+}
