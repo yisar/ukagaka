@@ -1,5 +1,5 @@
 # ukagaka
-this is a ukagaka plugin
+A ukagaka plugin written by native js but not jquery
 
 ## run
 ```shell
