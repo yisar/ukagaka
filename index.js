@@ -1,5 +1,4 @@
-import main from './main'
+import classes from './static/reset.css'
+import main from './component/main'
 
 main()
-
-console.log()

@@ -1,6 +1,7 @@
 body{
 	font: 13px 微软雅黑;
 	color: #444;
+	background: url(bg.gif);
 }
 .main{
 	background: #000;
@@ -10,7 +11,8 @@ body{
 	bottom: 10%;
 	right: 10%;
 	display:flex;
-	width: 280px
+	width: 280px;
+	height: 146px
 }
 .tips{
 	flex: 1;
@@ -48,4 +50,10 @@ body{
 }
 .face1{
 	background: url(face1.gif);
+}
+.face2{
+	background: url(face2.gif);
+}
+.face3{
+	background: url(face3.gif);
 }
