@@ -12,7 +12,8 @@ body{
 	right: 10%;
 	display:flex;
 	width: 280px;
-	height: 146px
+	height: 146px;
+	user-select: none;
 }
 .tips{
 	flex: 1;
@@ -23,6 +24,10 @@ body{
 	height: 50px;
 	color: #9a3535
 
+}
+
+.tips:hover{
+	user-select: text;
 }
 .icon{
 	width: 0;
@@ -72,6 +77,7 @@ body{
 }
 
 .call{
+	display: none;
 	position: fixed;
     bottom: 10px;
     right: 10px;
@@ -81,3 +87,13 @@ body{
 	padding: 2px 15px;
 	cursor: pointer;
 }
+
+.menu{
+	font-size: 10px;
+    position: absolute;
+    bottom: 82px;
+    right: 107px;
+    color: #e87a73;
+    cursor: pointer;
+}
+
