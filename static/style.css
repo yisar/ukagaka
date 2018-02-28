@@ -57,3 +57,27 @@ body{
 .face3{
 	background: url(face3.gif);
 }
+.close{
+	display: none;
+}
+.ukagaka:hover .close{
+	display: block;
+	color: #e87a73;
+	font-weight: bold;
+	font-size: 18px;
+    position: absolute;
+    right: 0px;
+    margin-right: -10px;
+    cursor: pointer;
+}
+
+.call{
+	position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background:linear-gradient(#ffe1e1,#fffffb);
+	border: 1px solid #e87a73;
+	color: #9a3535;
+	padding: 2px 15px;
+	cursor: pointer;
+}
