@@ -71,7 +71,7 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({20:[function(require,module,exports) {
+})({12:[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -101,7 +101,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],9:[function(require,module,exports) {
+},{}],6:[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -132,36 +132,37 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":20}],4:[function(require,module,exports) {
+},{"./bundle-url":12}],4:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"_css_loader":9}],11:[function(require,module,exports) {
+},{"_css_loader":6}],8:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"./bg.gif":[["58dfb2a9af2b3eb2b52c660e7edd0a32.gif",16],16],"./face1.gif":[["21b0cb6085475e5011c8a372e0976fbe.gif",18],18],"./face2.gif":[["f40d57fe86e3d6a1c677ef6613fab3e2.gif",17],17],"./face3.gif":[["01c87e9f6fe1279e0d5d2ab6377a3dd6.gif",19],19],"_css_loader":9}],12:[function(require,module,exports) {
+},{"./bg.gif":[["58dfb2a9af2b3eb2b52c660e7edd0a32.gif",11],11],"./face1.gif":[["21b0cb6085475e5011c8a372e0976fbe.gif",14],14],"./face2.gif":[["f40d57fe86e3d6a1c677ef6613fab3e2.gif",13],13],"./face3.gif":[["01c87e9f6fe1279e0d5d2ab6377a3dd6.gif",15],15],"_css_loader":6}],24:[function(require,module,exports) {
 module.exports = {
-	"data":[
-		{
-  		"tip":"主人sama~欢迎回家~~~",
-  		"face":"face1"
-  	},
-  	{
-  		"tip":"我是第二条啦啦啦",
-  		"face":"face2"
-  	},
-  	{
-  		"tip":"我是第三条啦啦啦",
-  		"face":"face3"
-  	}
-  ]
+    "data": [
+    {
+        "tip": "主人sama~欢迎回家~~~",
+        "face": "face1"
+    },
+    {
+        "tip": "我是第二条啦啦啦",
+        "face": "face2"
+    },
+    {
+        "tip": "我是第三条啦啦啦",
+        "face": "face3"
+    }],
+    "times": "3",
+    "time": "10000"
 };
-},{}],13:[function(require,module,exports) {
+},{}],10:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -180,7 +181,39 @@ exports.default = function () {
         document.querySelector('.call').style.display = 'none';
     };
 };
-},{}],6:[function(require,module,exports) {
+},{}],21:[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _data = require('../static/data.json');
+
+var _data2 = _interopRequireDefault(_data);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function () {
+    var MENU = '<ul>\n    <li><a href="https://github.com/132yse/ukagaka">Github</a></li>\n    <li><a href="https://www.yisaer.com">\u4F0A\u6492\u5C14\u306E\u7A9D</a></li>\n    </ul>';
+
+    var isBack = false;
+
+    document.querySelector('.menu').onclick = function () {
+        isBack = !isBack;
+        if (!isBack) {
+            var max = _data2.default.data.length - 1;
+            var index = Math.round(Math.random() * max);
+            document.querySelector('.menu').innerHTML = 'menu';
+            document.querySelector('.tips').innerHTML = _data2.default.data[index].tip;
+        } else {
+            document.querySelector('.tips').innerHTML = MENU;
+            document.querySelector('.menu').innerHTML = 'back';
+            return;
+        }
+    };
+};
+},{"../static/data.json":24}],3:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -199,17 +232,40 @@ var _close = require('./close');
 
 var _close2 = _interopRequireDefault(_close);
 
+var _menu = require('./menu');
+
+var _menu2 = _interopRequireDefault(_menu);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = function () {
     var max = _data2.default.data.length - 1;
     var index = Math.round(Math.random() * max);
-    var HTML = '<div class="tips">' + _data2.default.data[index].tip + '<i class="menu">menu</i></div>\n\t\t\t\t<i class="icon"></i>\n\t\t\t\t<div class="face ' + _data2.default.data[index].face + '"></div>\n\t\t\t\t<i class="close">\xD7</i>';
+    var times = 0;
+    var HTML = '<div class="tips">' + _data2.default.data[index].tip + '</div>\n\t\t\t\t<i class="icon"></i>\n\t\t\t\t<div class="face ' + _data2.default.data[index].face + '"></div>\n\t\t\t\t<i class="close">\xD7</i>\n\t\t\t\t<i class="menu">menu</i>';
 
     document.querySelector('.ukagaka').innerHTML = HTML;
+
+    var interval = setInterval(function () {
+        times += 1;
+        if (times == _data2.default.times) {
+
+            clearInterval(interval);
+        }
+        fetch('/').then(function (res) {
+            if (res.status === 200) {
+                var _index = Math.round(Math.random() * max);
+                document.querySelector('.tips').innerHTML = _data2.default.data[_index].tip;
+                document.querySelector('.face').classList.remove("face1", "face2", "face3");
+                document.querySelector('.face').classList.add(_data2.default.data[_index].face);
+            }
+        });
+    }, _data2.default.time);
+
     (0, _close2.default)();
+    (0, _menu2.default)();
 };
-},{"../static/style.css":11,"../static/data.json":12,"./close":13}],5:[function(require,module,exports) {
+},{"../static/style.css":8,"../static/data.json":24,"./close":10,"./menu":21}],5:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -282,7 +338,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _main2.default)();
 (0, _drag2.default)();
-},{"./static/reset.css":4,"./component/main":6,"./component/drag":5}],22:[function(require,module,exports) {
+},{"./static/reset.css":4,"./component/main":3,"./component/drag":5}],22:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -304,7 +360,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '57504' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '61723' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

@@ -34,9 +34,9 @@ body {
     line-height: 1;
 }
 
-ol, ul {
+/*ol, ul {
     list-style: none;
-}
+}*/
 
 blockquote, q {
     quotes: none;
@@ -59,6 +59,12 @@ a{
     font: 13px 微软雅黑;
     color: #444;
     background: url(58dfb2a9af2b3eb2b52c660e7edd0a32.gif);
+}
+
+a{
+    color: #9a3535;
+    font-size: 11px;
+    margin-left: -4px;
 }
 
 .main {
@@ -129,10 +135,6 @@ a{
 
 .close {
     display: none;
-}
-
-.ukagaka:hover .close {
-    display: block;
     color: #e87a73;
     font-weight: bold;
     font-size: 18px;
@@ -140,6 +142,10 @@ a{
     right: 0px;
     margin-right: -10px;
     cursor: pointer;
+}
+
+.ukagaka:hover .close {
+    display: block;
 }
 
 .call {
@@ -162,4 +168,15 @@ a{
     right: 107px;
     color: #e87a73;
     cursor: pointer;
+}
+
+.tips li{
+    width: 60px;
+    float: left;
+    color: #6b9cdb;
+    margin-left:18px;
+}
+
+li{
+    list-style-type:circle;
 }

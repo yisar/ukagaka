@@ -12,4 +12,6 @@ export default () => {
         document.querySelector('.call').style.display = 'none'
 
     }
+
+
 }

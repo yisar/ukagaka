@@ -4,6 +4,12 @@ body {
     background: url(bg.gif);
 }
 
+a{
+    color: #9a3535;
+    font-size: 11px;
+    margin-left: -4px;
+}
+
 .main {
     background: #000;
 }
@@ -72,10 +78,6 @@ body {
 
 .close {
     display: none;
-}
-
-.ukagaka:hover .close {
-    display: block;
     color: #e87a73;
     font-weight: bold;
     font-size: 18px;
@@ -83,6 +85,10 @@ body {
     right: 0px;
     margin-right: -10px;
     cursor: pointer;
+}
+
+.ukagaka:hover .close {
+    display: block;
 }
 
 .call {
@@ -105,4 +111,15 @@ body {
     right: 107px;
     color: #e87a73;
     cursor: pointer;
+}
+
+.tips li{
+    width: 60px;
+    float: left;
+    color: #6b9cdb;
+    margin-left:18px;
+}
+
+li{
+    list-style-type:circle;
 }

@@ -1,5 +1,6 @@
 # ukagaka
-A ukagaka plugin written by native js but not jquery
+>A ukagaka plugin written by native js but not jquery
+
 
 ## run
 ```shell
