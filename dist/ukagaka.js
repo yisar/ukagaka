@@ -71,7 +71,7 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({12:[function(require,module,exports) {
+})({18:[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -101,7 +101,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],6:[function(require,module,exports) {
+},{}],9:[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -132,19 +132,19 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":12}],4:[function(require,module,exports) {
+},{"./bundle-url":18}],6:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"_css_loader":6}],8:[function(require,module,exports) {
+},{"_css_loader":9}],11:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"./bg.gif":[["58dfb2a9af2b3eb2b52c660e7edd0a32.gif",11],11],"./face1.gif":[["21b0cb6085475e5011c8a372e0976fbe.gif",14],14],"./face2.gif":[["f40d57fe86e3d6a1c677ef6613fab3e2.gif",13],13],"./face3.gif":[["01c87e9f6fe1279e0d5d2ab6377a3dd6.gif",15],15],"_css_loader":6}],24:[function(require,module,exports) {
+},{"./bg.gif":[["58dfb2a9af2b3eb2b52c660e7edd0a32.gif",15],15],"./face1.gif":[["21b0cb6085475e5011c8a372e0976fbe.gif",17],17],"./face2.gif":[["f40d57fe86e3d6a1c677ef6613fab3e2.gif",19],19],"./face3.gif":[["01c87e9f6fe1279e0d5d2ab6377a3dd6.gif",16],16],"_css_loader":9}],10:[function(require,module,exports) {
 module.exports = {
     "data": [
     {
@@ -162,7 +162,7 @@ module.exports = {
     "times": "3",
     "time": "10000"
 };
-},{}],10:[function(require,module,exports) {
+},{}],13:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -181,7 +181,7 @@ exports.default = function () {
         document.querySelector('.call').style.display = 'none';
     };
 };
-},{}],21:[function(require,module,exports) {
+},{}],12:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -213,7 +213,7 @@ exports.default = function () {
         }
     };
 };
-},{"../static/data.json":24}],3:[function(require,module,exports) {
+},{"../static/data.json":10}],8:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -265,7 +265,7 @@ exports.default = function () {
     (0, _close2.default)();
     (0, _menu2.default)();
 };
-},{"../static/style.css":8,"../static/data.json":24,"./close":10,"./menu":21}],5:[function(require,module,exports) {
+},{"../static/style.css":11,"../static/data.json":10,"./close":13,"./menu":12}],7:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -319,7 +319,7 @@ exports.default = function () {
         isdrag = false;
     };
 };
-},{}],2:[function(require,module,exports) {
+},{}],4:[function(require,module,exports) {
 'use strict';
 
 var _reset = require('./static/reset.css');
@@ -336,9 +336,12 @@ var _drag2 = _interopRequireDefault(_drag);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var DOM = '<div class="ukagaka"></div>';
+document.querySelector('body').innerHTML += DOM;
+
 (0, _main2.default)();
 (0, _drag2.default)();
-},{"./static/reset.css":4,"./component/main":3,"./component/drag":5}],22:[function(require,module,exports) {
+},{"./static/reset.css":6,"./component/main":8,"./component/drag":7}],20:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -360,7 +363,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '61723' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '56955' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -461,5 +464,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}]},{},[22,2])
+},{}]},{},[20,4])
 //# sourceMappingURL=/dist/ukagaka.map

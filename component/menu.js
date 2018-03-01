@@ -11,8 +11,8 @@ export default () => {
     document.querySelector('.menu').onclick = () => {
         isBack = !isBack
         if (!isBack) {
-        	const max = data.data.length - 1
-        	let index = Math.round(Math.random() * max)
+            const max = data.data.length - 1
+            let index = Math.round(Math.random() * max)
             document.querySelector('.menu').innerHTML = 'menu'
             document.querySelector('.tips').innerHTML = data.data[index].tip
         } else {
