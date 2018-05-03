@@ -1,16 +1,10 @@
-body {
-    font: 13px 微软雅黑;
-    color: #444;
-    background: url(bg.gif);
-}
-
-a{
+.ukagaka a{
     color: #9a3535;
     font-size: 11px;
     margin-left: -4px;
 }
 
-.main {
+.ukagaka .main {
     background: #000;
 }
 
@@ -24,7 +18,7 @@ a{
     user-select: none;
 }
 
-.tips {
+.ukagaka .tips {
     flex: 1;
     background: linear-gradient(#ffe1e1, #fffffb);
     border: 1px solid #e87a73;
@@ -34,11 +28,11 @@ a{
     color: #9a3535
 }
 
-.tips:hover {
+.ukagaka .tips:hover {
     user-select: text;
 }
 
-.icon {
+.ukagaka .icon {
     width: 0;
     height: 0;
     border-top: 12px solid #e87a73;
@@ -48,7 +42,7 @@ a{
     top: 72px
 }
 
-.icon:after {
+.ukagaka .icon:after {
     content: '';
     width: 0;
     height: 0;
@@ -59,24 +53,28 @@ a{
     top: -14px
 }
 
-.face {
+.ukagaka .face {
     width: 85px;
     height: 146px;
 }
 
-.face1 {
+.ukagaka:hover .close{
+    display: block;
+}
+
+.ukagaka .face1 {
     background: url(face1.gif);
 }
 
-.face2 {
+.ukagaka .face2 {
     background: url(face2.gif);
 }
 
-.face3 {
+.ukagaka .face3 {
     background: url(face3.gif);
 }
 
-.close {
+.ukagaka .close {
     display: none;
     color: #e87a73;
     font-weight: bold;
@@ -85,10 +83,6 @@ a{
     right: 0px;
     margin-right: -10px;
     cursor: pointer;
-}
-
-.ukagaka:hover .close {
-    display: block;
 }
 
 .call {
@@ -104,7 +98,7 @@ a{
     cursor: pointer;
 }
 
-.menu {
+.ukagaka .menu {
     font-size: 10px;
     position: absolute;
     bottom: 82px;
@@ -113,13 +107,13 @@ a{
     cursor: pointer;
 }
 
-.tips li{
+.ukagaka .tips li{
     width: 60px;
     float: left;
     color: #6b9cdb;
     margin-left:18px;
 }
 
-li{
+.ukagaka li{
     list-style-type:circle;
 }
