@@ -9,13 +9,14 @@
 }
 
 .ukagaka {
-    position: absolute;
+    position: fixed;
     bottom: 10%;
     right: 10%;
     display: flex;
     width: 280px;
     height: 146px;
     user-select: none;
+    font-size: 11px
 }
 
 .ukagaka .tips {
